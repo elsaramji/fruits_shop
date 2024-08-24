@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_shop/const/path.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/views/Futures/Onboarding/view/onBoarding.dart';
+import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingMain.dart';
 
 class Splash extends StatefulWidget {
   static const String route = '/splash';
@@ -25,9 +25,11 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(Assets.assetsImagesPlant),
+          Align(
+              alignment: Alignment.topLeft,
+              child: SvgPicture.asset(Assets.assetsImagesPlant)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

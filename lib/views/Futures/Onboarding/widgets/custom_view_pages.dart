@@ -39,8 +39,19 @@ class CustomViewPages extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            children: [title, Text(subtitel)],
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                title,
+                SizedBox(height: 16),
+                Text(
+                  subtitel,
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
           )
         ],
       ),

@@ -1,4 +1,4 @@
-// views/Futures/Onboarding/view/onBoarding.dart
+// views/Futures/Onboarding/view/onBoardingMain.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/views/Futures/Onboarding/widgets/page_view_onboarding.dart';
 
@@ -8,6 +8,6 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageViewBoarding();
+    return Scaffold(body: const PageViewBoarding());
   }
 }
