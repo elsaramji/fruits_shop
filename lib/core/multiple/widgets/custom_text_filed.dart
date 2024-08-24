@@ -1,4 +1,4 @@
-// multiple/widgets/custom_text_filed.dart
+// core/multiple/widgets/custom_text_filed.dart
 import 'package:flutter/material.dart';
 
 // widgets/normal_filed.dart
@@ -8,19 +8,21 @@ class CustomTextFiled extends StatefulWidget {
 
   final Function(String)? onChanged;
   final String? Function(String?)? onValied;
-  final Widget? sficon;
-  bool? suceur;
+  final List<Icon>? sficons;
+  bool secur;
+  TextStyle? hintStyle;
   final VoidCallback? onPressedicon;
   final TextEditingController? controller;
   CustomTextFiled({
     super.key,
     this.onPressedicon,
-    this.sficon,
+    this.sficons,
     this.controller,
     this.onValied,
+    this.hintStyle,
+    required this.secur,
     required this.hints,
     required this.onChanged,
-    this.suceur,
   });
 
   @override
@@ -54,24 +56,33 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
   ///
   /// Returns a [TextFormField] widget.
   Widget build(BuildContext context) {
+    bool suceur = widget.secur;
     return TextFormField(
       controller: widget.controller,
       onChanged: widget.onChanged,
       validator: widget.onValied,
-      obscureText: widget.suceur ?? false,
+      obscureText: suceur,
       decoration: InputDecoration(
         fillColor: Color(0xffF9FAFA),
         hintText: widget.hints,
-        hintStyle: const TextStyle(color: Color(0xff949D9E)),
+        hintStyle:
+            widget.hintStyle ?? const TextStyle(color: Color(0xff949D9E)),
         /*
         label: Text(
           widget.title,
           style: const TextStyle(color: secondarytextColor),
         ),*/
-        suffixIcon: widget.sficon != null
+        suffixIcon: widget.sficons != null
             ? IconButton(
-                icon: widget.sficon!,
-                onPressed: widget.onPressedicon,
+                icon: suceur ? widget.sficons![0] : widget.sficons![1],
+                onPressed: () {
+                  setState(() {
+                    suceur = !suceur;
+                    widget.secur = suceur;
+                  });
+
+                  print(suceur);
+                },
               )
             : const SizedBox(),
         enabledBorder: TextfildeBorders.normallyborder(),
