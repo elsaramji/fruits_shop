@@ -5,6 +5,7 @@ import 'package:fruits_shop/const/initial_values.dart';
 import 'package:fruits_shop/core/multiple/Style/custom_buttons_style.dart';
 import 'package:fruits_shop/core/multiple/widgets/custom_button.dart';
 import 'package:fruits_shop/core/multiple/widgets/custom_text_filed.dart';
+import 'package:fruits_shop/views/Auth/views/create_new_account.dart';
 import 'package:fruits_shop/views/Auth/views/forgetpassword.dart';
 
 class Email_Login extends StatelessWidget {
@@ -71,7 +72,9 @@ class Email_Login extends StatelessWidget {
               style: TextStyle(color: ColorConst.primaryGray),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, CreateNewAccount.route);
+              },
               child: Text(
                 "قم بإنشاء حساب",
                 style: TextStyle(color: ColorConst.primaryColor),

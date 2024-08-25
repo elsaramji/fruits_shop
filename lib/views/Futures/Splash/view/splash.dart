@@ -1,7 +1,6 @@
 // views/Futures/Splash/view/splash.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruits_shop/const/path.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingMain.dart';
 
