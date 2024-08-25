@@ -12,6 +12,7 @@ class CustomTextFiled extends StatefulWidget {
   bool secur;
   TextInputType? keybordetepy;
   TextStyle? hintStyle;
+  TextAlign? textAlign;
   final VoidCallback? onPressedicon;
   final TextEditingController? controller;
   CustomTextFiled({
@@ -22,6 +23,7 @@ class CustomTextFiled extends StatefulWidget {
     this.onValied,
     this.hintStyle,
     this.keybordetepy,
+    this.textAlign,
     required this.secur,
     required this.hints,
     required this.onChanged,
@@ -60,7 +62,8 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
   Widget build(BuildContext context) {
     bool suceur = widget.secur;
     return TextFormField(
-      keyboardType:  widget.keybordetepy,
+      keyboardType: widget.keybordetepy,
+      textAlign: widget.textAlign ?? TextAlign.start,
       controller: widget.controller,
       onChanged: widget.onChanged,
       validator: widget.onValied,

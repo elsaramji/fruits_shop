@@ -30,8 +30,10 @@ class Forgetpassword extends StatelessWidget {
             ),
             CustomTextFiled(
                 keybordetepy: TextInputType.numberWithOptions(),
+                textAlign: TextAlign.left,
                 secur: false,
                 hints: "+20 123 567 8911",
+                hintStyle: TextStyle(locale: Locale('en')),
                 onChanged: (value) {}),
             SizedBox(
               height: InitialValues.initial_three,
