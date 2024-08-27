@@ -1,12 +1,13 @@
-// views/Auth/widgets/email_login.dart
+// views/Futures/Auth/widgets/email_login.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/const/color.dart';
 import 'package:fruits_shop/const/initial_values.dart';
 import 'package:fruits_shop/core/multiple/Style/custom_buttons_style.dart';
 import 'package:fruits_shop/core/multiple/widgets/custom_button.dart';
 import 'package:fruits_shop/core/multiple/widgets/custom_text_filed.dart';
-import 'package:fruits_shop/views/Auth/views/create_new_account.dart';
-import 'package:fruits_shop/views/Auth/views/forgetpassword.dart';
+import 'package:fruits_shop/views/Futures/Auth/views/create_new_account.dart';
+import 'package:fruits_shop/views/Futures/Auth/views/forgetpassword.dart';
+
 
 class Email_Login extends StatelessWidget {
   const Email_Login({

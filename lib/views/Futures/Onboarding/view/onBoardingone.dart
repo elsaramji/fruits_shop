@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/views/Auth/views/signin.dart';
+
+import 'package:fruits_shop/views/Futures/Auth/views/signin.dart';
 import 'package:fruits_shop/views/Futures/Onboarding/widgets/custom_view_pages.dart';
 
 class Onboardingone extends StatelessWidget {

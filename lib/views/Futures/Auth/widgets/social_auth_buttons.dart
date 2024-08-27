@@ -1,9 +1,10 @@
-// views/Auth/widgets/social_auth_buttons.dart
+// views/Futures/Auth/widgets/social_auth_buttons.dart
 
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/const/initial_values.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/views/Auth/widgets/custom_auth_button.dart';
+import 'package:fruits_shop/views/Futures/Auth/widgets/custom_auth_button.dart';
+
 
 class SocialAuthentication extends StatelessWidget {
   const SocialAuthentication({

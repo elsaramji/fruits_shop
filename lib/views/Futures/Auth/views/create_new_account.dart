@@ -1,8 +1,9 @@
-// views/Auth/views/create_new_account.dart
+// views/Futures/Auth/views/create_new_account.dart
 
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/const/initial_values.dart';
-import 'package:fruits_shop/views/Auth/widgets/create_account_widgets.dart';
+import 'package:fruits_shop/views/Futures/Auth/widgets/create_account_widgets.dart';
+
 
 class CreateNewAccount extends StatelessWidget {
   static const String route = "/signup";
