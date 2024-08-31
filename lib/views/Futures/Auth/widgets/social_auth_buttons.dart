@@ -3,8 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/const/initial_values.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/views/Futures/Auth/widgets/custom_auth_button.dart';
-
+import 'package:fruits_shop/core/multiple/widgets/custom_social_button.dart';
 
 class SocialAuthentication extends StatelessWidget {
   const SocialAuthentication({
@@ -15,7 +14,7 @@ class SocialAuthentication extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomAuthButton(
+        CustomSocialButton(
           title: "تسجيل بواسطة جوجل",
           iconphat: Assets.assetsImagesGoogle,
           onTouch: () {},
@@ -23,15 +22,15 @@ class SocialAuthentication extends StatelessWidget {
         SizedBox(
           height: InitialValues.initial_tow,
         ),
-        CustomAuthButton(
+        CustomSocialButton(
           title: "تسجيل بواسطة أبل",
           iconphat: Assets.assetsImagesApple,
           onTouch: () {},
         ),
         SizedBox(
-      height: InitialValues.initial_tow,
-    ),
-        CustomAuthButton(
+          height: InitialValues.initial_tow,
+        ),
+        CustomSocialButton(
           title: "تسجيل بواسطة فيسبوك",
           iconphat: Assets.assetsImagesFacebook,
           onTouch: () {},

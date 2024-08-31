@@ -37,7 +37,6 @@ class _PageViewBoardingState extends State<PageViewBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Column(
         children: [
           Expanded(
@@ -47,8 +46,17 @@ class _PageViewBoardingState extends State<PageViewBoarding> {
               children: [Onboardingone(), Onboardingtow()],
             ),
           ),
+          SizedBox(
+            height: 16,
+          ),
           DotsPage(curnetpage: curnetpage),
+          SizedBox(
+            height: 16,
+          ),
           StartUpButton(curnetpage: curnetpage),
+          SizedBox(
+            height: 32,
+          ),
         ],
       ),
     );

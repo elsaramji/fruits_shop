@@ -1,6 +1,8 @@
 // views/Futures/Onboarding/view/onBoardingtow.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/core/styles/font_style.dart';
 import 'package:fruits_shop/views/Futures/Onboarding/widgets/custom_view_pages.dart';
 
 class Onboardingtow extends StatelessWidget {
@@ -16,6 +18,7 @@ class Onboardingtow extends StatelessWidget {
             imagepath: Assets.assetsImagesPineappleonbording,
             title: Text(
               "ابحث وتسوق",
+              style: TextsStyle.bold23.copyWith(color: AppColors.grayscale950),
               textAlign: TextAlign.center,
             )));
   }

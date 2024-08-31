@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/core/styles/font_style.dart';
 
 class CustomViewPages extends StatelessWidget {
   final String subtitel, bacgroundpath, imagepath;
@@ -28,7 +30,7 @@ class CustomViewPages extends StatelessWidget {
                 Positioned.fill(
                   child: SvgPicture.asset(
                     bacgroundpath,
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 Positioned(
@@ -49,6 +51,8 @@ class CustomViewPages extends StatelessWidget {
                 Text(
                   subtitel,
                   textAlign: TextAlign.center,
+                  style: TextsStyle.semibold13
+                      .copyWith(color: AppColors.grayscale500),
                 )
               ],
             ),

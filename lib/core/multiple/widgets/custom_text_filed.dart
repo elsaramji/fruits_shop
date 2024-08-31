@@ -1,96 +1,39 @@
 // core/multiple/widgets/custom_text_filed.dart
 import 'package:flutter/material.dart';
 
-// widgets/normal_filed.dart
+import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/core/styles/font_style.dart';
 
-class CustomTextFiled extends StatefulWidget {
-  final String hints;
-
-  final Function(String)? onChanged;
-  final String? Function(String?)? onValied;
-  final List<Icon>? sficons;
-  bool secur;
-  TextInputType? keybordetepy;
-  TextStyle? hintStyle;
-  TextAlign? textAlign;
-  final VoidCallback? onPressedicon;
-  final TextEditingController? controller;
-  CustomTextFiled({
+class CustomTextformField extends StatelessWidget {
+  final String hinttext;
+  final TextEditingController controller;
+  final TextInputType keybordetepy;
+  final bool obscuretext;
+  final Widget? suffixicon;
+  const CustomTextformField({
     super.key,
-    this.onPressedicon,
-    this.sficons,
-    this.controller,
-    this.onValied,
-    this.hintStyle,
-    this.keybordetepy,
-    this.textAlign,
-    required this.secur,
-    required this.hints,
-    required this.onChanged,
+    required this.keybordetepy,
+    required this.hinttext,
+    required this.controller,
+    this.obscuretext = false,
+    this.suffixicon,
   });
 
   @override
-  State<CustomTextFiled> createState() => _CustomTextFiledState();
-}
-
-class _CustomTextFiledState extends State<CustomTextFiled> {
-  @override
-
-  /// Builds a [TextFormField] widget.
-  ///
-  /// The [TextFormField] widget is a form input field that allows users to enter
-  /// text. It is typically used within a [Form] widget.
-  ///
-  /// The [widget.controller] parameter is the [TextEditingController] that controls the
-  /// text being edited.
-  ///
-  /// The [widget.onChanged] parameter is a callback function that is called whenever the
-  /// text in the field changes.
-  ///
-  /// The [widget.onValied] parameter is a callback function that is called when the field
-  /// loses focus. It is used to validate the input.
-  ///
-  /// The [widget.sficon] parameter is the icon to be displayed as a suffix. If it is
-  /// `null`, no suffix icon is displayed.
-  ///
-  /// The [widget.onPressedicon] parameter is the callback function to be called when the
-  /// suffix icon is pressed.
-  ///
-  /// The [widget.title] parameter is the label for the input field.
-  ///
-  /// Returns a [TextFormField] widget.
   Widget build(BuildContext context) {
-    bool suceur = widget.secur;
     return TextFormField(
-      keyboardType: widget.keybordetepy,
-      textAlign: widget.textAlign ?? TextAlign.start,
-      controller: widget.controller,
-      onChanged: widget.onChanged,
-      validator: widget.onValied,
-      obscureText: suceur,
+      controller: controller,
+      style: TextsStyle.semibold13,
+      keyboardType: keybordetepy,
+      obscureText: obscuretext,
       decoration: InputDecoration(
-        fillColor: Color(0xffF9FAFA),
-        hintText: widget.hints,
+        hintText: hinttext,
+        suffixIcon: suffixicon,
         hintStyle:
-            widget.hintStyle ?? const TextStyle(color: Color(0xff949D9E)),
-        /*
-        label: Text(
-          widget.title,
-          style: const TextStyle(color: secondarytextColor),
-        ),*/
-        suffixIcon: widget.sficons != null
-            ? IconButton(
-                icon: suceur ? widget.sficons![0] : widget.sficons![1],
-                onPressed: () {
-                  setState(() {
-                    suceur = !suceur;
-                    widget.secur = suceur;
-                  });
-
-                  print(suceur);
-                },
-              )
-            : const SizedBox(),
+            TextsStyle.semibold13.copyWith(color: AppColors.grayscale400),
+        filled: true,
+        fillColor: Color(0xFFF9FAFA),
+        border: TextfildeBorders.normallyborder(),
         enabledBorder: TextfildeBorders.normallyborder(),
         focusedBorder: TextfildeBorders.normallyborder(),
         errorBorder: TextfildeBorders.errorborder(),
@@ -103,12 +46,14 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
 class TextfildeBorders {
   static OutlineInputBorder normallyborder() {
     return const OutlineInputBorder(
-      borderSide: BorderSide(color: Color(0xffE6E9EA)),
+      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderSide: BorderSide(color: Color(0xFFE6E9E9)),
     );
   }
 
   static OutlineInputBorder errorborder() {
     return const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(4)),
       borderSide: BorderSide(color: Colors.red),
     );
   }

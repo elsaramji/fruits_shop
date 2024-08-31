@@ -1,9 +1,12 @@
 // views/Futures/Onboarding/view/onBoardingone.dart
 
 import 'package:flutter/material.dart';
+import 'package:fruits_shop/const/keys.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
+import 'package:fruits_shop/core/helper/presence.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/core/styles/font_style.dart';
 
-import 'package:fruits_shop/views/Futures/Auth/views/signin.dart';
 import 'package:fruits_shop/views/Futures/Onboarding/widgets/custom_view_pages.dart';
 
 class Onboardingone extends StatelessWidget {
@@ -22,20 +25,34 @@ class Onboardingone extends StatelessWidget {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("مرحبًا بك في"),
+                  Text(
+                    "مرحبًا بك في",
+                    style: TextsStyle.bold23
+                        .copyWith(color: AppColors.grayscale950),
+                  ),
                   Text(
                     "HUB",
+                    style:
+                        TextsStyle.bold23.copyWith(color: AppColors.orange500),
                   ),
-                  Text("Fruit")
+                  Text(
+                    "Fruit",
+                    style:
+                        TextsStyle.bold23.copyWith(color: AppColors.green1500),
+                  )
                 ],
               )),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, SigninView.route);
+              Preferences.setBool(Keys.isviewedOnBoarding, true);
             },
             child: Padding(
               padding: const EdgeInsets.only(right: 21, top: 21),
-              child: Text("تخط"),
+              child: Text(
+                "تخط",
+                style: TextsStyle.regular13
+                    .copyWith(color: AppColors.grayscale400),
+              ),
             ),
           ),
         ],

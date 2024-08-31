@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// views/Futures/Auth/widgets/agree_polices.dart
+import 'package:flutter/material.dart';import 'package:flutter/material.dart';
 import 'package:fruits_shop/const/color.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
 
 class ChackPolices extends StatefulWidget {
   const ChackPolices({
@@ -19,7 +21,7 @@ class _ChackPolicesState extends State<ChackPolices> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Checkbox(
-            activeColor: ColorConst.primaryColor,
+        
             value: chack,
             onChanged: (value) {
               setState(() {
@@ -27,10 +29,13 @@ class _ChackPolicesState extends State<ChackPolices> {
               });
             }),
         Container(
-          width: MediaQuery.of(context).size.width * 0.75,
-          child: Text(
-              "من خلال إنشاء حساب ، فإنك توافق على الشروط والأحكام الخاصة بنا"),
-        ),
+            width: MediaQuery.of(context).size.width * 0.75,
+            child: Text.rich(TextSpan(children: [
+              TextSpan(text: " من خلال إنشاء حساب ، "),
+              TextSpan(
+                  text: "فإنك توافق على الشروط والأحكام الخاصة بنا",
+                  style: TextStyle(color: AppColors.green1700)),
+            ]))),
       ],
     );
   }

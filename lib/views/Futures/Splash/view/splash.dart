@@ -1,7 +1,10 @@
 // views/Futures/Splash/view/splash.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_shop/const/keys.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
+import 'package:fruits_shop/core/helper/presence.dart';
+
 import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingMain.dart';
 
 class Splash extends StatefulWidget {
@@ -14,13 +17,8 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  void initState() {
-    navigator(context);
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    navigator(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,5 +47,8 @@ class _SplashState extends State<Splash> {
 
 void navigator(context) async {
   await Future.delayed(const Duration(seconds: 3));
-  Navigator.pushReplacementNamed(context, OnBoarding.route);
+  if (Preferences.getBool(Keys.isviewedOnBoarding)) {
+  } else {
+    Navigator.pushReplacementNamed(context, OnBoarding.route);
+  }
 }
