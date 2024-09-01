@@ -1,6 +1,7 @@
 // views/Futures/Auth/widgets/agree_polices.dart
-import 'package:flutter/material.dart';import 'package:flutter/material.dart';
-import 'package:fruits_shop/const/color.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+
 import 'package:fruits_shop/core/styles/color_style.dart';
 
 class ChackPolices extends StatefulWidget {
@@ -21,7 +22,6 @@ class _ChackPolicesState extends State<ChackPolices> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Checkbox(
-        
             value: chack,
             onChanged: (value) {
               setState(() {

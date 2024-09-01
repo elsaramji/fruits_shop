@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingMain.dart';
-import 'package:fruits_shop/views/Futures/Splash/view/splash.dart';
+import '../../components/futures/Auth/views/login_view.dart';
+import '../../components/futures/Onboarding/view/onBoardingMain.dart';
+import '../../components/futures/Splash/view/splash.dart';
 
 Route<dynamic> ongenerate(RouteSettings setting) {
   switch (setting.name) {
@@ -11,6 +12,9 @@ Route<dynamic> ongenerate(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const Splash());
     case OnBoarding.route:
       return MaterialPageRoute(builder: (context) => const OnBoarding());
+
+    case LoginView.route:
+      return MaterialPageRoute(builder: (context) => const LoginView());
 
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

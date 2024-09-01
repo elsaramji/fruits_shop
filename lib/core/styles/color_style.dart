@@ -8,6 +8,8 @@ class AppColors {
   static const Color primaryLiner = Color(0xffDDDFDF);
   static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000000);
+  //C9CECF
+  static const Color graySpecial = Color(0xffC9CECF);
   static const Color grayscale500 = Color(0xff4e5556);
   static const Color grayscale50 = Color(0xfff2f3f3);
   static const Color grayscale950 = Color(0xff0c0d0d);

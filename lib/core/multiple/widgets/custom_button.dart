@@ -2,19 +2,33 @@
 
 import 'package:flutter/material.dart';
 
+import '../../styles/color_style.dart';
+import '../../styles/font_style.dart';
+import '../Style/custom_buttons_style.dart';
+
 class CustomButton extends StatelessWidget {
-  final Widget child;
+  final String titel;
   final VoidCallback? onPressed;
-  final ButtonStyle style;
+  final ButtonStyle? style;
+
   const CustomButton(
-      {super.key, required this.child, this.onPressed, required this.style});
+      {super.key, required this.titel, required this.onPressed, this.style});
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: onPressed,
-      child: child,
-      style: style,
+      child: SizedBox(
+        height: 54,
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            titel,
+            style: TextsStyle.bold16.copyWith(color: AppColors.white),
+          ),
+        ),
+      ),
+      style: style ?? CustomButtonsStyle.primeryButtonstyle,
     );
   }
 }

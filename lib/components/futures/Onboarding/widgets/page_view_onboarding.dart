@@ -1,10 +1,11 @@
-// views/Futures/Onboarding/widgets/page_view_onboarding.dart
+// components/futures/Onboarding/widgets/page_view_onboarding.dart
 
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingone.dart';
-import 'package:fruits_shop/views/Futures/Onboarding/view/onBoardingtow.dart';
-import 'package:fruits_shop/views/Futures/Onboarding/widgets/dot_page.dart';
-import 'package:fruits_shop/views/Futures/Onboarding/widgets/start_up_button.dart';
+
+import '../../../../Futures/Onboarding/widgets/dot_page.dart';
+import '../view/onBoardingone.dart';
+import '../view/onBoardingtow.dart';
+import 'start_up_button.dart';
 
 class PageViewBoarding extends StatefulWidget {
   const PageViewBoarding({super.key});

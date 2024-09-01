@@ -1,6 +1,7 @@
+// views/Futures/Onboarding/widgets/dot_page.dart
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/const/color.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
 
 class DotsPage extends StatelessWidget {
   const DotsPage({
@@ -15,10 +16,10 @@ class DotsPage extends StatelessWidget {
     return DotsIndicator(
       dotsCount: 2,
       decorator: DotsDecorator(
-        activeColor: ColorConst.primaryColor,
+        activeColor: AppColors.primaryColor,
         color: curnetpage != 1
-            ? ColorConst.primaryColor.withOpacity(0.5)
-            : ColorConst.primaryColor,
+            ? AppColors.primaryColor.withOpacity(0.5)
+            : AppColors.primaryColor,
       ),
     );
   }

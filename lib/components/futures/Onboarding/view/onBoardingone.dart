@@ -1,13 +1,15 @@
-// views/Futures/Onboarding/view/onBoardingone.dart
+// components/futures/Onboarding/view/onBoardingone.dart
 
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/const/keys.dart';
+import 'package:fruits_shop/constant/keys.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/core/helper/presence.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-import 'package:fruits_shop/views/Futures/Onboarding/widgets/custom_view_pages.dart';
+import '../../../../Futures/Onboarding/widgets/custom_view_pages.dart';
+import '../../Auth/views/login_view.dart';
+
 
 class Onboardingone extends StatelessWidget {
   const Onboardingone({super.key});
@@ -45,6 +47,7 @@ class Onboardingone extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Preferences.setBool(Keys.isviewedOnBoarding, true);
+              Navigator.pushReplacementNamed(context, LoginView.route);
             },
             child: Padding(
               padding: const EdgeInsets.only(right: 21, top: 21),

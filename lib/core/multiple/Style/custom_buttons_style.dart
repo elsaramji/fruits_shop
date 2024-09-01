@@ -1,24 +1,24 @@
 // core/multiple/Style/custom_buttons_style.dart
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/const/color.dart';
-import 'package:fruits_shop/const/initial_values.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
+
 import 'package:fruits_shop/core/styles/font_style.dart';
 
 class CustomButtonsStyle {
   static final ButtonStyle primeryButtonstyle = ElevatedButton.styleFrom(
-      textStyle: TextsStyle.bold16.copyWith(color: ColorConst.primaryWhite),
-      backgroundColor: ColorConst.primaryColor,
-      overlayColor: ColorConst.primaryGray,
-      foregroundColor: ColorConst.primaryGray,
+      textStyle: TextsStyle.bold16.copyWith(color: AppColors.primaryWhite),
+      backgroundColor: AppColors.primaryColor,
+      overlayColor: AppColors.grayscale300,
+      foregroundColor: AppColors.grayscale300,
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(InitialValues.initial_tow),
+        borderRadius: BorderRadius.circular(16),
       ));
   static final ButtonStyle socailAuthButtonstyle = ElevatedButton.styleFrom(
       textStyle: TextStyle(color: Color(0xff0C0D0D)),
-      backgroundColor: ColorConst.primaryWhite,
-      overlayColor: ColorConst.primaryColor,
-      foregroundColor: ColorConst.primaryColor,
+      backgroundColor: AppColors.primaryWhite,
+      overlayColor: AppColors.primaryColor,
+      foregroundColor: AppColors.primaryColor,
       elevation: 0,
       shape: RoundedRectangleBorder(
         side: BorderSide(color: Color(0xffDDDFDF)),

@@ -28,12 +28,13 @@ class CustomSocialButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(iconphat),
-              const SizedBox(width: 10),
+              Spacer(),
               Text(
                 title,
                 style: TextsStyle.semibold13
                     .copyWith(color: AppColors.grayscale900),
               ),
+              Spacer(),
             ],
           ),
         ));

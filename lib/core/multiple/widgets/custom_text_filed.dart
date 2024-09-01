@@ -4,31 +4,48 @@ import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-class CustomTextformField extends StatelessWidget {
+class CustomTextformField extends StatefulWidget {
   final String hinttext;
   final TextEditingController controller;
   final TextInputType keybordetepy;
-  final bool obscuretext;
-  final Widget? suffixicon;
-  const CustomTextformField({
+  bool obscuretext;
+  final List<Icon>? suffixicons;
+  CustomTextformField({
     super.key,
     required this.keybordetepy,
     required this.hinttext,
     required this.controller,
     this.obscuretext = false,
-    this.suffixicon,
+    this.suffixicons,
   });
 
   @override
+  State<CustomTextformField> createState() => _CustomTextformFieldState();
+}
+
+class _CustomTextformFieldState extends State<CustomTextformField> {
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      
+      controller: widget.controller,
       style: TextsStyle.semibold13,
-      keyboardType: keybordetepy,
-      obscureText: obscuretext,
+      keyboardType: widget.keybordetepy,
+      obscureText: widget.obscuretext,
       decoration: InputDecoration(
-        hintText: hinttext,
-        suffixIcon: suffixicon,
+        hintText: widget.hinttext,
+        suffixIcon: widget.suffixicons != null
+            ? GestureDetector(
+                onTap: () {
+                  setState(() {
+                    widget.obscuretext = !widget.obscuretext;
+                  });
+                },
+                child: widget.obscuretext
+                    ? widget.suffixicons![0]
+                    : widget.suffixicons![1],
+              )
+            : null,
         hintStyle:
             TextsStyle.semibold13.copyWith(color: AppColors.grayscale400),
         filled: true,
