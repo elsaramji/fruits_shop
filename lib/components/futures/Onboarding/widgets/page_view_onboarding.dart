@@ -1,10 +1,10 @@
-// components/futures/Onboarding/widgets/page_view_onboarding.dart
+// components/future's/onboarding/widgets/page_view_onboarding.dart
 
 import 'package:flutter/material.dart';
 
-import '../../../../Futures/Onboarding/widgets/dot_page.dart';
 import '../view/onBoardingone.dart';
 import '../view/onBoardingtow.dart';
+import 'dot_page.dart';
 import 'start_up_button.dart';
 
 class PageViewBoarding extends StatefulWidget {

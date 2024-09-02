@@ -1,12 +1,11 @@
-// components/futures/Onboarding/widgets/start_up_button.dart
+// components/future's/onboarding/widgets/start_up_button.dart
 
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/constant/keys.dart';
+import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_button.dart';
 import 'package:fruits_shop/core/helper/presence.dart';
-import 'package:fruits_shop/core/multiple/Style/custom_buttons_style.dart';
-import 'package:fruits_shop/core/multiple/widgets/custom_button.dart';
-
-import '../../Auth/views/login_view.dart';
+import '../../../../core/constant/keys.dart';
+import '../../Auth/signin/views/login_view.dart';
 
 class StartUpButton extends StatelessWidget {
   const StartUpButton({

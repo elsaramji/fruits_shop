@@ -1,12 +1,13 @@
-// components/futures/Auth/views/login_view.dart
+// components/future's/Auth/signin/views/login_view.dart
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/components/futures/Auth/widgets/navigate_create_Account.dart';
-import 'package:fruits_shop/core/multiple/widgets/custom_button.dart';
-import 'package:fruits_shop/core/multiple/widgets/custom_or_divider.dart';
-import 'package:fruits_shop/core/multiple/widgets/custom_text_filed.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 
-import '../../../../core/multiple/widgets/custom_Appbar.dart';
+
+import '../../../../../core/custom/widgets/custom_Appbar.dart';
+import '../../../../../core/custom/widgets/custom_button.dart';
+import '../../../../../core/custom/widgets/custom_or_divider.dart';
+import '../../../../../core/custom/widgets/custom_text_filed.dart';
+import '../widgets/navigate_create_Account.dart';
 import '../widgets/navigate_forgetpassword.dart';
 import '../widgets/social_auth_buttons.dart';
 

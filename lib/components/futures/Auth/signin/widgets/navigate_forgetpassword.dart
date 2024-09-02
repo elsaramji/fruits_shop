@@ -1,7 +1,7 @@
+// components/future's/Auth/signin/widgets/navigate_forgetpassword.dart
 import 'package:flutter/material.dart';
-
-import '../../../../core/styles/color_style.dart';
-import '../../../../core/styles/font_style.dart';
+import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/core/styles/font_style.dart';
 
 class NavigateForgetpassword extends StatelessWidget {
   const NavigateForgetpassword({

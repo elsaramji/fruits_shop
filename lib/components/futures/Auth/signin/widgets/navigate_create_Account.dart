@@ -1,8 +1,10 @@
-// components/futures/Auth/widgets/navigate_create_Account.dart
+// components/future's/Auth/signin/widgets/navigate_create_Account.dart
 import 'package:flutter/material.dart';
 
-import '../../../../core/styles/color_style.dart';
-import '../../../../core/styles/font_style.dart';
+import '../../../../../core/styles/color_style.dart';
+import '../../../../../core/styles/font_style.dart';
+
+
 class NavigateCreateAccount extends StatelessWidget {
   const NavigateCreateAccount({
     super.key,

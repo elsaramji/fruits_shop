@@ -1,10 +1,10 @@
-// components/futures/Onboarding/view/onBoardingtow.dart
+// components/future's/onboarding/view/onBoardingtow.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-import '../../../../Futures/Onboarding/widgets/custom_view_pages.dart';
+import '../widgets/custom_view_pages.dart';
 
 class Onboardingtow extends StatelessWidget {
   const Onboardingtow({super.key});

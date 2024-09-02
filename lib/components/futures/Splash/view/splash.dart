@@ -1,13 +1,14 @@
-// components/futures/Splash/view/splash.dart
+// components/futures/splash/view/splash.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruits_shop/constant/keys.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/core/helper/presence.dart';
 
 
-import '../../Auth/views/login_view.dart';
-import '../../Onboarding/view/onBoardingMain.dart';
+import '../../../../core/constant/keys.dart';
+import '../../Auth/signin/views/login_view.dart';
+import '../../onboarding/view/onBoardingMain.dart';
+
 
 class Splash extends StatefulWidget {
   static const String route = '/splash';

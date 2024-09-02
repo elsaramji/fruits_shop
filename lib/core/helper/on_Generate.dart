@@ -1,10 +1,10 @@
 // core/helper/on_Generate.dart
 
 import 'package:flutter/material.dart';
+import 'package:fruits_shop/components/futures/Auth/signin/views/login_view.dart';
+import 'package:fruits_shop/components/futures/onboarding/view/onBoardingMain.dart';
+import 'package:fruits_shop/components/futures/splash/view/splash.dart';
 
-import '../../components/futures/Auth/views/login_view.dart';
-import '../../components/futures/Onboarding/view/onBoardingMain.dart';
-import '../../components/futures/Splash/view/splash.dart';
 
 Route<dynamic> ongenerate(RouteSettings setting) {
   switch (setting.name) {

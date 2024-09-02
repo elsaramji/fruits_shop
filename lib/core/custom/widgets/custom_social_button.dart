@@ -1,8 +1,8 @@
-// core/multiple/widgets/custom_social_button.dart
+// core/custom/widgets/custom_social_button.dart
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-import 'package:fruits_shop/core/multiple/Style/custom_buttons_style.dart';
+import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
 
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';

@@ -1,9 +1,11 @@
-// components/futures/Auth/widgets/social_auth_buttons.dart
+// components/future's/Auth/signin/widgets/social_auth_buttons.dart
 
 import 'package:flutter/material.dart';
 
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/core/multiple/widgets/custom_social_button.dart';
+
+
+import '../../../../../core/custom/widgets/custom_social_button.dart';
 
 class SocialButtonSection extends StatelessWidget {
   const SocialButtonSection({

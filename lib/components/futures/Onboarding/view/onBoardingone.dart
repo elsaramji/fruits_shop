@@ -1,14 +1,15 @@
-// components/futures/Onboarding/view/onBoardingone.dart
+// components/future's/onboarding/view/onBoardingone.dart
 
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/constant/keys.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/core/helper/presence.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-import '../../../../Futures/Onboarding/widgets/custom_view_pages.dart';
-import '../../Auth/views/login_view.dart';
+import '../../../../core/constant/keys.dart';
+import '../../Auth/signin/views/login_view.dart';
+
+import '../widgets/custom_view_pages.dart';
 
 
 class Onboardingone extends StatelessWidget {
