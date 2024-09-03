@@ -1,18 +1,18 @@
-// components/future's/onboarding/view/onBoardingtow.dart
+// components/futures/onboarding/view/view_tow.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-import '../widgets/custom_view_pages.dart';
+import '../widgets/custom_boarding.dart';
 
-class Onboardingtow extends StatelessWidget {
-  const Onboardingtow({super.key});
+class BoardTow extends StatelessWidget {
+  const BoardTow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: CustomViewPages(
+        child: CustomBoard(
             subtitel:
                 "نقدم لك افضل الفواكه المختارة بعناية . اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
             bacgroundpath: Assets.assetsImagesBackgroundonboardingtow,

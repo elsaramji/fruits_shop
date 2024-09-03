@@ -1,14 +1,14 @@
-// views/Futures/Onboarding/widgets/custom_view_pages.dart
+// components/futures/onboarding/widgets/custom_boarding.dart
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
-class CustomViewPages extends StatelessWidget {
+class CustomBoard extends StatelessWidget {
   final String subtitel, bacgroundpath, imagepath;
   final Widget title;
-  const CustomViewPages(
+  const CustomBoard(
       {super.key,
       required this.subtitel,
       required this.bacgroundpath,

@@ -1,4 +1,4 @@
-// core/multiple/widgets/custom_Appbar.dart
+// core/custom/widgets/custom_Appbar.dart
 
 import 'package:flutter/material.dart';
 
@@ -11,9 +11,12 @@ AppBar customAppBar({
   required Icon iconleading,
 }) {
   return AppBar(
-    leading: GestureDetector(
-      onTap: () => Navigator.pop(context),
-      child: iconleading,
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: GestureDetector(
+        onTap: () => Navigator.pop(context),
+        child: iconleading,
+      ),
     ),
     title: Text(
       title,

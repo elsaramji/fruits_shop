@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits_shop/components/futures/splash/view/splash.dart';
 
 import 'package:fruits_shop/core/helper/on_Generate.dart';
-import 'package:fruits_shop/core/helper/presence.dart';
+import 'package:fruits_shop/service/database/presence.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/generated/l10n.dart';
 

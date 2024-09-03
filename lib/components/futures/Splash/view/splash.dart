@@ -1,14 +1,13 @@
 // components/futures/splash/view/splash.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_shop/components/futures/splash/logics/splash_logic.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/core/helper/presence.dart';
-
+import 'package:fruits_shop/service/database/presence.dart';
 
 import '../../../../core/constant/keys.dart';
-import '../../Auth/signin/views/login_view.dart';
-import '../../onboarding/view/onBoardingMain.dart';
-
+import '../../Auth/signin/views/Signin.dart';
+import '../../onboarding/view/view_main.dart';
 
 class Splash extends StatefulWidget {
   static const String route = '/splash';
@@ -21,7 +20,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    navigator(context);
+    SplashLogic.goToApp(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,14 +44,5 @@ class _SplashState extends State<Splash> {
         ],
       ),
     );
-  }
-}
-
-void navigator(context) async {
-  await Future.delayed(const Duration(seconds: 3));
-  if (Preferences.getBool(Keys.isviewedOnBoarding)) {
-    Navigator.pushReplacementNamed(context, LoginView.route);
-  } else {
-    Navigator.pushReplacementNamed(context, OnBoarding.route);
   }
 }

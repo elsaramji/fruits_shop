@@ -1,24 +1,21 @@
-// components/future's/onboarding/widgets/page_view_onboarding.dart
-
+// components/futures/onboarding/view/view_main.dart
 import 'package:flutter/material.dart';
+import 'package:fruits_shop/components/futures/onboarding/view/view_one.dart';
+import 'package:fruits_shop/components/futures/onboarding/view/view_tow.dart';
+import '../widgets/dots.dart';
+import '../widgets/startnow_button.dart';
 
-import '../view/onBoardingone.dart';
-import '../view/onBoardingtow.dart';
-import 'dot_page.dart';
-import 'start_up_button.dart';
-
-class PageViewBoarding extends StatefulWidget {
-  const PageViewBoarding({super.key});
+class MainBoards extends StatefulWidget {
+  static const String route = "/onBoarding";
+  const MainBoards({super.key});
 
   @override
-  State<PageViewBoarding> createState() => _PageViewBoardingState();
+  State<MainBoards> createState() => _MainBoardsState();
 }
 
-@override
-class _PageViewBoardingState extends State<PageViewBoarding> {
+class _MainBoardsState extends State<MainBoards> {
   late PageController pageController;
   int curnetpage = 0;
-
   void initState() {
     pageController = PageController();
     pageController.addListener(() {
@@ -44,7 +41,7 @@ class _PageViewBoardingState extends State<PageViewBoarding> {
             child: PageView(
               controller: pageController,
               scrollDirection: Axis.horizontal,
-              children: [Onboardingone(), Onboardingtow()],
+              children: [BoardOne(), BoardTow()],
             ),
           ),
           SizedBox(
