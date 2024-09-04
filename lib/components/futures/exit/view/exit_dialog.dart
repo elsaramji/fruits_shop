@@ -1,0 +1,29 @@
+// components/futures/exit/view/exit_dialog.dart
+import 'package:flutter/material.dart';
+import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_button.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_social_button.dart';
+
+class ExitDialog extends StatelessWidget {
+  const ExitDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Text('هل تريد الخروج من التطبيق؟'),
+      actions: <Widget>[
+        CustomButton(
+          titel: "نعم",
+          onPressed: () {},
+          style: CustomButtonsStyle.primeryButtonstyle,
+        ),
+        CustomSocialButton(
+          title: "لا",
+          onTouch: () {
+            //reset the state
+          },
+        )
+      ],
+    );
+  }
+}

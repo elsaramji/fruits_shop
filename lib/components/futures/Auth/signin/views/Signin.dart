@@ -21,7 +21,7 @@ class Signin extends StatelessWidget {
       appBar: customAppBar(
         context: context,
         title: 'تسجيل الدخول',
-        iconleading: const Icon(Icons.arrow_back_ios),
+        
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),

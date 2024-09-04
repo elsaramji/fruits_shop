@@ -1,4 +1,4 @@
-// core/multiple/Style/custom_buttons_style.dart
+// core/custom/Style/custom_buttons_style.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 

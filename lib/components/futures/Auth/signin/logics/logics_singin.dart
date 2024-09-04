@@ -6,6 +6,6 @@ import '../../signup/view/signup.dart';
 
 class SigninLogics {
   static void gotoSignup(BuildContext context) {
-    Navigator.popAndPushNamed(context, Signup.route);
+    Navigator.pushNamed(context, Signup.route);
   }
 }

@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/components/futures/Auth/signin/views/Signin.dart';
 import 'package:fruits_shop/components/futures/Auth/signup/view/signup.dart';
+import 'package:fruits_shop/components/futures/exit/view/exit_dialog.dart';
 import 'package:fruits_shop/components/futures/onboarding/view/view_main.dart';
 import 'package:fruits_shop/components/futures/splash/view/splash.dart';
 
-Route<dynamic> ongenerate(RouteSettings setting) {
+Route<dynamic>? ongenerate(RouteSettings setting) {
   switch (setting.name) {
     case Splash.route:
       return MaterialPageRoute(builder: (context) => const Splash());
@@ -20,6 +21,6 @@ Route<dynamic> ongenerate(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const Signup());
 
     default:
-      return MaterialPageRoute(builder: (context) => const Scaffold());
+      return null;
   }
 }

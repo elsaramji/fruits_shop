@@ -8,12 +8,13 @@ import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
 class CustomSocialButton extends StatelessWidget {
-  final String title, iconphat;
+  final String title;
+  final String? iconphat;
   final void Function()? onTouch;
   const CustomSocialButton({
     super.key,
     required this.title,
-    required this.iconphat,
+    this.iconphat,
     this.onTouch,
   });
 
@@ -27,7 +28,9 @@ class CustomSocialButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(iconphat),
+              Visibility(
+                  child: SvgPicture.asset(iconphat ?? ''),
+                  visible: iconphat != null),
               Spacer(),
               Text(
                 title,

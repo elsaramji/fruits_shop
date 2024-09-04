@@ -8,14 +8,17 @@ import '../../styles/font_style.dart';
 AppBar customAppBar({
   required BuildContext context,
   required String title,
-  required Icon iconleading,
+  Icon? iconleading,
 }) {
   return AppBar(
     leading: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: GestureDetector(
-        onTap: () => Navigator.pop(context),
-        child: iconleading,
+      child: Visibility(
+        visible: iconleading != null ? true : false,
+        child: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: iconleading,
+        ),
       ),
     ),
     title: Text(
