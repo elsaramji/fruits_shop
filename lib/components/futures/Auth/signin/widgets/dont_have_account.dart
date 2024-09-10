@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/styles/color_style.dart';
 import '../../../../../core/styles/font_style.dart';
 
-import '../logics/logics_singin.dart';
+import '../logics/logics_singin_goto.dart';
 
 class DonthaveAccount extends StatelessWidget {
   const DonthaveAccount({
@@ -27,7 +27,7 @@ class DonthaveAccount extends StatelessWidget {
               style: TextsStyle.semibold16.copyWith(color: AppColors.green1500),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  SigninLogics.gotoSignup(context);
+                  SigninLogicsGoto.gotoSignup(context);
                 }),
         ])),
       ],

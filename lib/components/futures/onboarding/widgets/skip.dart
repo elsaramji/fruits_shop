@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/styles/color_style.dart';
 import '../../../../core/styles/font_style.dart';
-import '../logics/logics_onBoarding.dart';
+import '../logics/logics_onBoarding_goto.dart';
 
 class Skip extends StatelessWidget {
   const Skip({
@@ -14,7 +14,7 @@ class Skip extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        LogicsOnBoarding.startnow(context);
+        LogicsOnBoardingGoto.startnow(context);
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 21, top: 21),

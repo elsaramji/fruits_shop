@@ -1,10 +1,14 @@
+// components/futures/Auth/signup/widgets/signup_Button.dart
 import 'package:flutter/material.dart';
+
 import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
 
 import '../../../../../core/custom/widgets/custom_button.dart';
 
 class SignupButton extends StatelessWidget {
+  final void Function() onPressed;
   const SignupButton({
+    required this.onPressed,
     super.key,
   });
 
@@ -12,7 +16,7 @@ class SignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomButton(
       titel: "انشاء حساب",
-      onPressed: () {},
+      onPressed: onPressed,
       style: CustomButtonsStyle.primeryButtonstyle,
     );
   }

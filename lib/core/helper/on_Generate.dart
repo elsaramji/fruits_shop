@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/components/futures/Auth/signin/views/Signin.dart';
-import 'package:fruits_shop/components/futures/Auth/signup/view/signup.dart';
+import 'package:fruits_shop/components/futures/Auth/signup/view/signup_view_builder.dart';
 import 'package:fruits_shop/components/futures/exit/view/exit_dialog.dart';
 import 'package:fruits_shop/components/futures/onboarding/view/view_main.dart';
 import 'package:fruits_shop/components/futures/splash/view/splash.dart';

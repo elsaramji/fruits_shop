@@ -1,7 +1,7 @@
 // components/futures/Auth/signup/widgets/have_account.dart
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/components/futures/Auth/signup/logics/signup_logics.dart';
+import 'package:fruits_shop/components/futures/Auth/signup/logics/signup_logics_goto.dart';
 import '../../../../../core/styles/color_style.dart';
 import '../../../../../core/styles/font_style.dart';
 
@@ -22,7 +22,7 @@ class HaveAccount extends StatelessWidget {
           style: TextsStyle.semibold16.copyWith(color: AppColors.green1500),
           recognizer: TapGestureRecognizer()
             ..onTap = () {
-              SignupLogics.gotoSignin(context);
+              SignupLogicsGoto.gotoSignin(context);
             }),
     ]));
   }

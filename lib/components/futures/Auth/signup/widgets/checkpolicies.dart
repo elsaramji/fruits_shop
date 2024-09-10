@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import '../../../../../core/styles/color_style.dart';
 
 class ChackPolices extends StatefulWidget {
+  final ValueChanged<bool>? onChanged;
   const ChackPolices({
+    this.onChanged,
     super.key,
   });
 
@@ -13,7 +15,7 @@ class ChackPolices extends StatefulWidget {
 }
 
 class _ChackPolicesState extends State<ChackPolices> {
-  var chack = false;
+  bool chack = false;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,9 +25,9 @@ class _ChackPolicesState extends State<ChackPolices> {
         Checkbox(
             value: chack,
             onChanged: (value) {
-              setState(() {
-                chack = value!;
-              });
+              chack = value!;
+              widget.onChanged!(value);
+              setState(() {});
             }),
         Expanded(
           child: Text.rich(TextSpan(children: [

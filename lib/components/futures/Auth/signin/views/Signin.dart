@@ -1,5 +1,6 @@
 // components/futures/Auth/signin/views/Signin.dart
 import 'package:flutter/material.dart';
+import 'package:fruits_shop/components/futures/Auth/signin/widgets/singin_textfilds.dart';
 
 import '../../../../../core/custom/widgets/custom_Appbar.dart';
 
@@ -9,7 +10,6 @@ import '../widgets/dont_have_account.dart';
 import '../widgets/forgetpassword.dart';
 import '../widgets/login_Button.dart';
 import '../widgets/social_auth_buttons.dart';
-import '../widgets/singin_textfilds.dart';
 
 class Signin extends StatelessWidget {
   static const route = '/login_view';
@@ -21,7 +21,6 @@ class Signin extends StatelessWidget {
       appBar: customAppBar(
         context: context,
         title: 'تسجيل الدخول',
-        
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -29,7 +28,7 @@ class Signin extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 24),
-              SigninTextFileds(),
+              const SigninTextFileds(),
               NavigateForgetpassword(),
               const SizedBox(height: 16),
               LoginButton(),

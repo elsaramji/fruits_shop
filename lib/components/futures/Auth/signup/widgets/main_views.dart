@@ -1,0 +1,29 @@
+// components/futures/Auth/signup/widgets/main_views.dart
+
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
+import '../../../../../core/custom/widgets/custom_Appbar.dart';
+import '../../../../../service/state/sginup_cubit.dart';
+import '../view/signup_view_widget.dart';
+
+class MainViews extends StatelessWidget {
+  final state;
+  const MainViews({super.key, required this.state});
+
+  @override
+  Widget build(BuildContext context) {
+    log("build signup view main views");
+    return Scaffold(
+      appBar: customAppBar(
+          context: context,
+          title: 'تسجيل حساب',
+          iconleading: const Icon(Icons.arrow_back_ios)),
+      body: ModalProgressHUD(
+          inAsyncCall: state is SignupLoading ? true : false,
+          child: const SignupView()),
+    );
+  }
+}

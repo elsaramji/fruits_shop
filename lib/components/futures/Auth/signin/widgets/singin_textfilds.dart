@@ -10,22 +10,19 @@ class SigninTextFileds extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
-
     return Column(
       children: [
         CustomTextformField(
-            keybordetepy: TextInputType.emailAddress,
-            hinttext: "البريد الالكتروني",
-            controller: emailController),
+          keybordetepy: TextInputType.emailAddress,
+          hinttext: "البريد الالكتروني",
+        ),
         const SizedBox(height: 16),
         CustomTextformField(
-            keybordetepy: TextInputType.visiblePassword,
-            hinttext: "كلمة المرور",
-            obscuretext: true,
-            suffixicons: Items.visiibleIcons,
-            controller: passwordController),
+          keybordetepy: TextInputType.visiblePassword,
+          hinttext: "كلمة المرور",
+          obscuretext: true,
+          suffixicons: Items.visiibleIcons,
+        ),
         const SizedBox(height: 16),
       ],
     );

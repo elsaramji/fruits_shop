@@ -1,20 +1,25 @@
-// core/multiple/widgets/custom_text_filed.dart
+// core/custom/widgets/custom_text_filed.dart
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
 
+@immutable
+// ignore: must_be_immutable
 class CustomTextformField extends StatefulWidget {
   final String hinttext;
-  final TextEditingController controller;
+
   final TextInputType keybordetepy;
+  final void Function(String?)? onsaved;
   bool obscuretext;
   final List<Icon>? suffixicons;
   CustomTextformField({
     super.key,
     required this.keybordetepy,
     required this.hinttext,
-    required this.controller,
+    this.onsaved,
     this.obscuretext = false,
     this.suffixicons,
   });
@@ -26,12 +31,18 @@ class CustomTextformField extends StatefulWidget {
 class _CustomTextformFieldState extends State<CustomTextformField> {
   @override
   Widget build(BuildContext context) {
+   
     return TextFormField(
-      
-      controller: widget.controller,
+      onSaved: widget.onsaved,
       style: TextsStyle.semibold13,
       keyboardType: widget.keybordetepy,
       obscureText: widget.obscuretext,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'هذا الحقل مطلوب';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         hintText: widget.hinttext,
         suffixIcon: widget.suffixicons != null
