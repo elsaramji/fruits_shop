@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:fruits_shop/service/state/sginup_cubit.dart';
+import 'package:fruits_shop/service/state/sginup_cubit/sginup_cubit.dart';
 
 import '../../../../../core/custom/widgets/custom_errors_massage.dart';
 import '../widgets/main_views.dart';

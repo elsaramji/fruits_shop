@@ -36,4 +36,24 @@ class FirebaseAuthService extends AuthRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, Users>> signInWithEmailandpassword(
+      {required String email, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return right(Users.fromFirebase(credential.user!));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return left(Failure('البريد الالكتروني غير موجود'));
+      } else if (e.code == 'wrong-password') {
+        return left(Failure('كلمة المرور غير صحيحة'));
+      } else if (e.code == 'network-request-failed') {
+        return left(Failure('فشل الاتصال بالشبكة'));
+      } else {
+        return left(Failure("خطأ غير متوقع"));
+      }
+    }
+  }     
 }

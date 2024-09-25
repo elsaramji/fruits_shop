@@ -8,7 +8,7 @@ import 'package:fruits_shop/service/firebase/auth/auth_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-import '../../../../../service/state/sginup_cubit.dart';
+import '../../../../../service/state/sginup_cubit/sginup_cubit.dart';
 
 
 

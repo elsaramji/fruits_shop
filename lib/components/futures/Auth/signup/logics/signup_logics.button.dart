@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/custom/widgets/custom_errors_massage.dart';
-import '../../../../../service/state/sginup_cubit.dart';
+import '../../../../../service/state/sginup_cubit/sginup_cubit.dart';
 
 class SignupLogicsButton {
   static void createAccountClick(BuildContext context, autovalidateMode,

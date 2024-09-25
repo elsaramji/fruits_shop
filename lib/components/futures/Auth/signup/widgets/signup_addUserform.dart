@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_shop/core/custom/widgets/custom_errors_massage.dart';
 import '../../../../../core/custom/variables/items.dart';
 import '../../../../../core/custom/widgets/custom_text_filed.dart';
-import '../../../../../service/state/sginup_cubit.dart';
+import '../../../../../service/state/sginup_cubit/sginup_cubit.dart';
 import 'checkpolicies.dart';
 import 'signup_Button.dart';
 

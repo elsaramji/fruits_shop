@@ -8,4 +8,7 @@ import '../../core/models/users.dart';
 abstract class AuthRepo {
   Future<Either<Failure, Users>> createEmailWithemailandpassword(
       {required String email, required String password, required String name});
+
+  Future<Either<Failure, Users>> signInWithEmailandpassword(
+      {required String email, required String password});
 }

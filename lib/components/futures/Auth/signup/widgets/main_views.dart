@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../../../core/custom/widgets/custom_Appbar.dart';
-import '../../../../../service/state/sginup_cubit.dart';
+import '../../../../../service/state/sginup_cubit/sginup_cubit.dart';
 import '../view/signup_view_widget.dart';
 
 class MainViews extends StatelessWidget {
