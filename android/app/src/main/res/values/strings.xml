@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fruitsstore</string>
+    <string name="facebook_app_id">556240203506564</string>
+    <string name="fb_login_protocol_scheme">fb23035564503</string>
+    <string name="facebook_client_token">bdb70e7403ae6abcffbd6867145a9250</string>
+</resources>

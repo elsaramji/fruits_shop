@@ -2,21 +2,26 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits_shop/components/futures/splash/view/splash.dart';
-
 import 'package:fruits_shop/core/helper/on_Generate.dart';
-import 'package:fruits_shop/firebase_options.dart';
-import 'package:fruits_shop/service/database/presence.dart';
+import 'package:fruits_shop/core/injection/Git_it.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
+import 'package:fruits_shop/firebase_options.dart';
 import 'package:fruits_shop/generated/l10n.dart';
+import 'package:fruits_shop/service/database/presence.dart';
+import 'package:fruits_shop/service/state_management/BlocObservers/bloc_observers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Preferences.init();
+  Bloc.observer = BlocObserverImpl();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Preferences.init();
+  setupGetIt();
   runApp(const FruitHup());
 }
 

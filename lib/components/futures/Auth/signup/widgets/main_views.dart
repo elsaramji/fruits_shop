@@ -3,10 +3,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_loadingProgress.dart';
+import 'package:fruits_shop/service/state_management/sginup_cubit/sginup_cubit.dart';
 
 import '../../../../../core/custom/widgets/custom_Appbar.dart';
-import '../../../../../service/state/sginup_cubit/sginup_cubit.dart';
 import '../view/signup_view_widget.dart';
 
 class MainViews extends StatelessWidget {
@@ -17,13 +17,12 @@ class MainViews extends StatelessWidget {
   Widget build(BuildContext context) {
     log("build signup view main views");
     return Scaffold(
-      appBar: customAppBar(
-          context: context,
-          title: 'تسجيل حساب',
-          iconleading: const Icon(Icons.arrow_back_ios)),
-      body: ModalProgressHUD(
-          inAsyncCall: state is SignupLoading ? true : false,
-          child: const SignupView()),
-    );
+        appBar: customAppBar(
+            context: context,
+            title: 'تسجيل حساب',
+            iconleading: const Icon(Icons.arrow_back_ios)),
+        body: CustomLoadingProgress(
+            isOn: state is SignupLoading ? true : false,
+            child: const SignupView()));
   }
 }

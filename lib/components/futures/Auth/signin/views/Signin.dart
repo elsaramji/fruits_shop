@@ -1,15 +1,13 @@
 // components/futures/Auth/signin/views/Signin.dart
 import 'package:flutter/material.dart';
-import 'package:fruits_shop/components/futures/Auth/signin/widgets/singin_textfilds.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_shop/components/futures/Auth/signin/widgets/main_viwe.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_errors_massage.dart';
+import 'package:fruits_shop/core/custom/widgets/custom_loadingProgress.dart';
+import 'package:fruits_shop/core/injection/Git_it.dart';
+import 'package:fruits_shop/service/state_management/sginin_cubit/siginin_cubit_cubit.dart';
 import '../../../../../core/custom/widgets/custom_Appbar.dart';
-
-import '../../../../../core/custom/widgets/custom_or_divider.dart';
-
-import '../widgets/dont_have_account.dart';
-import '../widgets/forgetpassword.dart';
-import '../widgets/login_Button.dart';
-import '../widgets/social_auth_buttons.dart';
+import '../../../../../service/firebase/auth/auth_service.dart';
 
 class Signin extends StatelessWidget {
   static const route = '/login_view';
@@ -22,28 +20,25 @@ class Signin extends StatelessWidget {
         context: context,
         title: 'تسجيل الدخول',
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
-              const SigninTextFileds(),
-              NavigateForgetpassword(),
-              const SizedBox(height: 16),
-              LoginButton(),
-              // NotHaveAccount
-              const SizedBox(height: 33),
-              DonthaveAccount(),
-              // OrDivider
-              const SizedBox(height: 33),
-              CustomOrDivider(),
-              // SocialButtonSection
-              const SizedBox(height: 16),
-              SocialButtonSection()
-            ],
-          ),
-        ),
+      body: BlocProvider(
+        create: (context) => SigninCubit(getIt<FirebaseAuthService>()),
+        child: Builder(builder: (context) {
+          return BlocConsumer<SigninCubit, SigninState>(
+            listener: (context, state) {
+              if (state is SigninError) {
+                ErrorsMassage.errorsBar(context, state.error);
+              }
+              if (state is SigninSuccess) {
+                ErrorsMassage.errorsBar(context, 'تم تسجيل الدخول بنجاح');
+              }
+            },
+            builder: (context, state) {
+              return CustomLoadingProgress(
+                  isOn: state is SigninLoading ? true : false,
+                  child: SinginMainViwe());
+            },
+          );
+        }),
       ),
     );
   }

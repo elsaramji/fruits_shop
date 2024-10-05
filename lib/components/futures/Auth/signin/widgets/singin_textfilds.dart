@@ -1,30 +1,68 @@
 // components/futures/Auth/signin/widgets/singin_textfilds.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_shop/components/futures/Auth/signin/widgets/forgetpassword.dart';
+import 'package:fruits_shop/components/futures/Auth/signin/widgets/login_Button.dart';
+import 'package:fruits_shop/service/state_management/sginin_cubit/siginin_cubit_cubit.dart';
+
 import '../../../../../core/custom/variables/items.dart';
 import '../../../../../core/custom/widgets/custom_text_filed.dart';
 
-class SigninTextFileds extends StatelessWidget {
-  const SigninTextFileds({
+class SigninForm extends StatefulWidget {
+  const SigninForm({
     super.key,
   });
 
   @override
+  State<SigninForm> createState() => _SigninFormState();
+}
+
+class _SigninFormState extends State<SigninForm> {
+  final formkey = GlobalKey<FormState>();
+  late String email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomTextformField(
-          keybordetepy: TextInputType.emailAddress,
-          hinttext: "البريد الالكتروني",
-        ),
-        const SizedBox(height: 16),
-        CustomTextformField(
-          keybordetepy: TextInputType.visiblePassword,
-          hinttext: "كلمة المرور",
-          obscuretext: true,
-          suffixicons: Items.visiibleIcons,
-        ),
-        const SizedBox(height: 16),
-      ],
+    return Form(
+      key: formkey,
+      child: Column(
+        children: [
+          CustomTextformField(
+            keybordetepy: TextInputType.emailAddress,
+            hinttext: "البريد الالكتروني",
+            onsaved: (value) {
+              email = value!;
+            },
+          ),
+          const SizedBox(height: 16),
+          CustomTextformField(
+            keybordetepy: TextInputType.visiblePassword,
+            hinttext: "كلمة المرور",
+            obscuretext: true,
+            onsaved: (value) {
+              password = value!;
+            },
+            suffixicons: Items.visiibleIcons,
+          ),
+          const SizedBox(height: 16),
+          NavigateForgetpassword(),
+          const SizedBox(height: 16),
+          SigninButton(
+            onPressed: () {
+              if (formkey.currentState!.validate()) {
+                formkey.currentState!.save();
+                BlocProvider.of<SigninCubit>(context)
+                    .signInWithemailandpassword(
+                        email: email, password: password);
+              } else {
+                setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                });
+              }
+            },
+          ),
+        ],
+      ),
     );
   }
 }

@@ -5,9 +5,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 class Users {
   final String? name;
   final String email;
-  final String uid;
+  final String? uid;
 
   Users({required this.name, required this.email, required this.uid});
+  toMap() {
+    return {
+      "name": name,
+      "email": email,
+      "uid": uid,
+    };
+  }
 
   factory Users.fromFirebase(User user) {
     return Users(
