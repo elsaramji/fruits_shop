@@ -1,6 +1,6 @@
-// service/state/sginin_cubit/siginin_cubit_cubit.dart
+// service/state_management/sginin_cubit/siginin_cubit_cubit.dart
 import 'package:bloc/bloc.dart';
-import 'package:fruits_shop/core/models/users.dart';
+import 'package:fruits_shop/core/models/user_entity.dart';
 
 import 'package:meta/meta.dart';
 

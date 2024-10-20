@@ -1,28 +1,50 @@
 // service/firebase/data/firestore_service.dart
 
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fruits_shop/service/database/database_services.dart';
+
+import '../../../core/exceptions/auth_excaption.dart';
+import '../../../core/models/user_entity.dart';
 
 class FirestoreService extends DatabaseServices {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   // add data to fireStore database
   @override
-  addData({required String path, required Map<String, dynamic> data}) async {
-
+  void addUserData({required String path, required Usermodel user}) {
     try {
-      // get reference
-      final reference = await _firestore.collection(path);
+      _firestore.collection(path).doc(user.uid).set(user.toMap());
+    } catch (e) {
+      AuthException.unKnownExceptionHandel(e);
+    }
+  }
 
-      // add data
-      await reference.add(data);
-      log('data added successfully');
+  Future<bool> isnotExist(
+      {required String path, required String? email}) async {
+    final email_exist = await _firestore
+        .collection(path)
+        .where("email", isEqualTo: email)
+        .get();
+
+    return email_exist.docs.asMap().isEmpty;
+
+    /*
+*/
+  }
+
+  Future<bool> isExist({required String path, required String uid}) async {
+    // check if user exist
+    final result = await _firestore.collection(path).doc(uid).get();
+    return result.exists;
+  }
+
+  @override
+  Future<Usermodel?> fetchUserData(
+      {required String path, required String uid}) async {
+    var data = await _firestore.collection(path).doc(uid).get();
+    if (!data.exists) {
+      return Usermodel.fromMap(data.data()!);
     }
-    // catch firebase exception
-    catch (e) {
-      log(e.toString());
-    }
+    return Usermodel.fromMap({});
   }
 }

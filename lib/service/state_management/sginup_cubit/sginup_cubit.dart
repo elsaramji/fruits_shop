@@ -1,6 +1,6 @@
-// service/state/sginup_cubit/sginup_cubit.dart
+// service/state_management/sginup_cubit/sginup_cubit.dart
 import 'package:bloc/bloc.dart';
-import 'package:fruits_shop/core/models/users.dart';
+import 'package:fruits_shop/core/models/user_entity.dart';
 import 'package:meta/meta.dart';
 
 import '../../firebase/auth/auth_service.dart';

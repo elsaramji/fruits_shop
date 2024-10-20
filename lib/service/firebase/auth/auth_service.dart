@@ -5,51 +5,55 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruits_shop/core/errors/failure.dart';
-import 'package:fruits_shop/core/models/users.dart';
+import 'package:fruits_shop/core/models/user_entity.dart';
 import 'package:fruits_shop/service/auth/auth_repo.dart';
-import 'package:fruits_shop/service/firebase/handle/database_control/add_users_tobase.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../handle/exception/auth_exception.dart';
+import '../../../core/exceptions/auth_excaption.dart';
+import '../handle/database_operations/users_operations.dart';
 
 // Auth Service Class For Firebase
 class FirebaseAuthService extends AuthRepo {
+  Usermodel? users;
+  Stream<User?>? userStream;
   // sign up with email and password
   @override
-  Future<Either<Failure, Users>> createEmailWithemailandpassword(
+  Future<Either<Failure, Usermodel>> createEmailWithemailandpassword(
       {required String email,
       required String password,
       required String name}) async {
     try {
       // credential value
+
       final credential =
           // create user with email and password in firebase
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      await credential.user!.updateDisplayName(name);
+      users = Usermodel.fromFirebase(credential.user!, name: name);
       // add user to fireStore database
-      AddUsersTobase.addUsersTobase(credential, name: name);
+      UserOperationsFirestore.addusertofirestore(users!);
 
       // return user credential  from firebase
-      return right(Users.fromFirebase(credential.user!));
+      return right(users!);
     }
     // catch firebase auth exception
     on FirebaseAuthException catch (e) {
       // return firebase auth exception
-      return AuthException.firebaseAuthExceptionHandel(e);
+      return left(AuthException.firebaseAuthExceptionHandel(e));
     }
     // catch unknown exception
     catch (e) {
-      log("$e");
       // return unknown exception and failure
-      return left(Failure("خطأ غير متوقع"));
+      return left(AuthException.unKnownExceptionHandel(e));
     }
   }
 
   // sign in with email and password
   @override
-  Future<Either<Failure, Users>> signInWithEmailandpassword(
+  Future<Either<Failure, Usermodel>> signInWithEmailandpassword(
       {required String email, required String password}) async {
     try {
       // credential value
@@ -57,14 +61,15 @@ class FirebaseAuthService extends AuthRepo {
           // sign in with email and password in firebase
           .signInWithEmailAndPassword(email: email, password: password);
       // return user credential from firebase
-      return right(Users.fromFirebase(credential.user!));
+      UserOperationsFirestore.fetchUserData(uid: credential.user!.uid);
+      return right(Usermodel.fromFirebase(credential.user!));
     }
     // catch firebase auth exception
     on FirebaseAuthException catch (e) {
-      log("${e.code}");
+      log("firebase auth exception ${e.code}");
 
       // return firebase auth exception
-      return AuthException.firebaseAuthExceptionHandel(e);
+      return left(AuthException.firebaseAuthExceptionHandel(e));
     }
     // catch unknown exception
     catch (e) {
@@ -76,7 +81,7 @@ class FirebaseAuthService extends AuthRepo {
 
   // sign in with google
   @override
-  Future<Either<Failure, Users>> signinWithGoogle() async {
+  Future<Either<Failure, Usermodel>> signinWithGoogle() async {
     try {
       // sign in with google in firebase
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -93,20 +98,26 @@ class FirebaseAuthService extends AuthRepo {
       // sign in with credential
       final userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
+      users = Usermodel.fromFirebase(userCredential.user!);
       // add user to fireStore database
-      AddUsersTobase.addUsersTobase(userCredential);
-
-      return right(Users.fromFirebase(userCredential.user!));
+      userStream = FirebaseAuth.instance.userChanges();
+      UserOperationsFirestore.addusertofirestore(
+        users!,
+      );
+      UserOperationsFirestore.fetchUserData(uid: userCredential.user!.uid);
+      return right(Usermodel.fromFirebase(userCredential.user!));
     }
     // catch firebase auth exception
     on FirebaseAuthException catch (e) {
-      return AuthException.firebaseAuthExceptionHandel(e);
+      return left(AuthException.firebaseAuthExceptionHandel(e));
+    } catch (e) {
+      return left(AuthException.unKnownExceptionHandel(e));
     }
   }
 
   // sign in with facebook
   @override
-  Future<Either<Failure, Users>> signinWithFacebook() async {
+  Future<Either<Failure, Usermodel>> signinWithFacebook() async {
     try {
       // sign in with facebook
       final LoginResult loginResult = await FacebookAuth.instance.login();
@@ -116,22 +127,39 @@ class FirebaseAuthService extends AuthRepo {
       // sign in with credential
       final userCredential = await FirebaseAuth.instance
           .signInWithCredential(facebookAuthCredential);
-
+      users = Usermodel.fromFirebase(userCredential.user!);
       // add user to fireStore database
-      AddUsersTobase.addUsersTobase(userCredential);
-
+      userStream = FirebaseAuth.instance.userChanges();
+      UserOperationsFirestore.addusertofirestore(users!);
+      UserOperationsFirestore.fetchUserData(uid: userCredential.user!.uid);
       // return user from firebase
-      return right(Users.fromFirebase(userCredential.user!));
+      return right(users!);
     }
     // catch firebase auth exception
     on FirebaseAuthException catch (e) {
-      return AuthException.firebaseAuthExceptionHandel(e);
+      return left(AuthException.firebaseAuthExceptionHandel(e));
+    } catch (e) {
+      // return unknown exception and failure
+
+      return left(AuthException.unKnownExceptionHandel(e));
     }
   }
 
   // sign in with apple for apple device only
   @override
-  Future<Either<Failure, Users>> signinWithApple() async {
+  Future<Either<Failure, Usermodel>> signinWithApple() async {
     return left(Failure("سوف يتم تفعيله في وقت لاحق"));
+  }
+
+  @override
+  Future<Either<Failure, void>> forgetPassword({required String email}) async {
+    try {
+      return right(
+          await FirebaseAuth.instance.sendPasswordResetEmail(email: email));
+    } on FirebaseAuthException catch (e) {
+      return left(AuthException.firebaseAuthExceptionHandel(e));
+    } catch (e) {
+      return left(AuthException.unKnownExceptionHandel(e));
+    }
   }
 }

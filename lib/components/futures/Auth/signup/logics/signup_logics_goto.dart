@@ -7,4 +7,6 @@ class SignupLogicsGoto {
   static void gotoSignin(BuildContext context) {
     Navigator.pushNamed(context, Signin.route);
   }
+
+ 
 }

@@ -1,9 +1,9 @@
 // core/helper/on_Generate.dart
 
 import 'package:flutter/material.dart';
+import 'package:fruits_shop/components/futures/Auth/forgetpassword/view/forget_password_viwe.dart';
 import 'package:fruits_shop/components/futures/Auth/signin/views/Signin.dart';
 import 'package:fruits_shop/components/futures/Auth/signup/view/signup_view_builder.dart';
-import 'package:fruits_shop/components/futures/exit/view/exit_dialog.dart';
 import 'package:fruits_shop/components/futures/onboarding/view/view_main.dart';
 import 'package:fruits_shop/components/futures/splash/view/splash.dart';
 
@@ -19,6 +19,9 @@ Route<dynamic>? ongenerate(RouteSettings setting) {
 
     case Signup.route:
       return MaterialPageRoute(builder: (context) => const Signup());
+
+    case ForgetPasswordViwe.routeName:
+      return MaterialPageRoute(builder: (context) => ForgetPasswordViwe());
 
     default:
       return null;

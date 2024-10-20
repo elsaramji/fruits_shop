@@ -1,4 +1,4 @@
-// service/state/sginup_state.dart
+// service/state_management/sginup_cubit/sginup_state.dart
 part of 'sginup_cubit.dart';
 
 @immutable
@@ -9,7 +9,7 @@ class SignupInitial extends SignupState {}
 class SignupLoading extends SignupState {}
 
 class SignupSuccess extends SignupState {
-  final Users user;
+  final Usermodel user;
   SignupSuccess(this.user);
 }
 

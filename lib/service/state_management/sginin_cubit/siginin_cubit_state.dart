@@ -1,4 +1,4 @@
-// service/state/sginin_cubit/siginin_cubit_state.dart
+// service/state_management/sginin_cubit/siginin_cubit_state.dart
 part of 'siginin_cubit_cubit.dart';
 
 @immutable
@@ -9,7 +9,7 @@ class SigininInitial extends SigninState {}
 class SigninLoading extends SigninState {}
 
 class SigninSuccess extends SigninState {
-  final Users user;
+  final Usermodel user;
   SigninSuccess(this.user);
 }
 

@@ -1,7 +1,9 @@
-// components/future's/Auth/signin/widgets/navigate_forgetpassword.dart
+// components/futures/Auth/signin/widgets/forgetpassword.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
 import 'package:fruits_shop/core/styles/font_style.dart';
+
+import '../logics/logics_singin_goto.dart';
 
 class NavigateForgetpassword extends StatelessWidget {
   const NavigateForgetpassword({
@@ -10,14 +12,19 @@ class NavigateForgetpassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Text(
-          "نسيت كلمة المرور؟",
-          style: TextsStyle.semibold13.copyWith(color: AppColors.green1600),
-        ),
-      ],
+    return GestureDetector(
+      onTap: () {
+        SigninLogicsGoto.gotoForgetpassword(context);
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(
+            "نسيت كلمة المرور؟",
+            style: TextsStyle.semibold13.copyWith(color: AppColors.green1600),
+          ),
+        ],
+      ),
     );
   }
 }
