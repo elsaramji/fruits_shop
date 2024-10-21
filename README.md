@@ -57,7 +57,7 @@ The sign-up screen allows users to create a new account. It includes:
 
 ![Sign Up Screen](https://github.com/user-attachments/assets/52bad5b2-bac5-49cd-b450-d2a62ad4ea10)
 
-## Password Reset
+## 4. Password Reset
 
 **Description:**
 This page is for resetting a forgotten password.
