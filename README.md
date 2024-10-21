@@ -12,7 +12,9 @@ This is the landing screen for the Fruits Shop app, welcoming users with a fruit
 
 **Screenshot**:
 
-![Welcome Screen](./Screenshot_2024-10-21-15-13-07-028_com.example.fruits_shop.jpg)
+![Welcome Screen](https://github.com/user-attachments/assets/478d3be8-3275-4243-b049-0f6db05800a4)
+
+![Welcome Screen](https://github.com/user-attachments/assets/c583eb3f-719f-45ab-83ba-73e3e4c669e0)
 
 ---
 
@@ -34,7 +36,8 @@ Additionally, the page contains a prompt to create a new account if the user doe
 
 **Screenshot**:
 
-![Login Screen](./Screenshot_2024-10-21-15-13-22-452_com.example.fruits_shop.jpg)
+![Login Screen](https://github.com/user-attachments/assets/b16d9e86-60d6-46f0-98c8-c4cc822d6f8c)
+
 
 ---
 
@@ -52,4 +55,5 @@ The sign-up screen allows users to create a new account. It includes:
 
 **Screenshot**:
 
-![Sign Up Screen](./Screenshot_2024-10-21-15-13-27-241_com.example.fruits_shop.jpg)
+![Sign Up Screen](https://github.com/user-attachments/assets/52bad5b2-bac5-49cd-b450-d2a62ad4ea10)
+
