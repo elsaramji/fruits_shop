@@ -57,5 +57,13 @@ class Assets {
   /// Assets for assetsImagesProfile
   /// assets/images/profile.png
   static const String assetsImagesProfile = "assets/images/profile.png";
+
+  /// Assets for assetsImagesSearchNormal
+  /// assets/images/search-normal.png
+  static const String assetsImagesSearchNormal = "assets/images/search-normal.png";
+
+  /// Assets for assetsImagesSetting
+  /// assets/images/setting.png
+  static const String assetsImagesSetting = "assets/images/setting.png";
 }
 
