@@ -57,3 +57,19 @@ The sign-up screen allows users to create a new account. It includes:
 
 ![Sign Up Screen](https://github.com/user-attachments/assets/52bad5b2-bac5-49cd-b450-d2a62ad4ea10)
 
+## Password Reset
+
+**Description:**
+This page is for resetting a forgotten password.
+
+**Elements:**
+
+* **Header:** "Password Reset"
+* **Input field:** For entering the user's email address.
+* **Button:** Labeled "Reset Password"
+
+**Action:**
+When the user clicks the "Reset Password" button, the system will send a verification code to the provided email address.
+
+![Password Reset](https://github.com/user-attachments/assets/bb7504b2-c497-4526-a20b-7beba53ea577)
+
