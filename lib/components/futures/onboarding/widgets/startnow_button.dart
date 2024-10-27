@@ -5,6 +5,8 @@ import 'package:fruits_shop/components/futures/onboarding/logics/logics_onBoardi
 import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
 import 'package:fruits_shop/core/custom/widgets/custom_button.dart';
 
+import '../../../../core/styles/color_style.dart';
+
 class StartUpButton extends StatelessWidget {
   const StartUpButton({
     super.key,
@@ -23,6 +25,7 @@ class StartUpButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: CustomButton(
+           titelcolor: AppColors.white,
           titel: "ابدأ الان",
           onPressed: () {
             LogicsOnBoardingGoto.startnow(context);

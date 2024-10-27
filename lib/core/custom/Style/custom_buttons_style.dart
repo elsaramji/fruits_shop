@@ -1,7 +1,6 @@
 // core/custom/Style/custom_buttons_style.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';
-
 import 'package:fruits_shop/core/styles/font_style.dart';
 
 class CustomButtonsStyle {
@@ -23,5 +22,14 @@ class CustomButtonsStyle {
       shape: RoundedRectangleBorder(
         side: BorderSide(color: Color(0xffDDDFDF)),
         borderRadius: BorderRadius.circular(10),
+      ));
+  static final ButtonStyle itembuttonstyle = ElevatedButton.styleFrom(
+      textStyle: TextsStyle.bold16.copyWith(color: AppColors.primaryColor),
+      backgroundColor: AppColors.white,
+      overlayColor: AppColors.grayscale300,
+      foregroundColor: AppColors.grayscale300,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(6),
       ));
 }

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/custom/widgets/custom_button.dart';
+import '../../../../../core/styles/color_style.dart';
 
 class SigninButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -13,6 +14,7 @@ class SigninButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButton(
+       titelcolor: AppColors.white,
       titel: "تسجيل الدخول",
       onPressed: onPressed,
     );

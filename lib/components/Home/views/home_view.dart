@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../custom/widgets/custom_home_appbar.dart';
 import '../custom/widgets/custom_prodcut_searchbar.dart';
+import '../widgets/offers_widget.dart';
 
 class HomeView extends StatelessWidget {
   static const String id = 'HomeView';
@@ -25,10 +26,12 @@ class HomeView extends StatelessWidget {
               CustomProductSearchBar(
                 onChanged: (value) {},
               ),
+              SizedBox(height: 12),
             ],
           ),
         ),
         // body Section
+        Offers(),
       ])),
     );
   }

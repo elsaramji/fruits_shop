@@ -1,18 +1,16 @@
-// core/custom/widgets/custom_button.dart
-
+// components/Home/custom/widgets/custom_button_items.dart
 import 'package:flutter/material.dart';
 
-import '../../styles/color_style.dart';
-import '../../styles/font_style.dart';
-import '../Style/custom_buttons_style.dart';
+import '../../../../core/custom/Style/custom_buttons_style.dart';
+import '../../../../core/styles/font_style.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButtonItem extends StatelessWidget {
   final String titel;
   final Color titelcolor;
   final VoidCallback? onPressed;
   final ButtonStyle? style;
 
-  const CustomButton({
+  const CustomButtonItem({
     super.key,
     required this.titel,
     required this.onPressed,
@@ -25,16 +23,15 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       child: SizedBox(
-        height: 54,
-        width: double.infinity,
+        height: 32,
         child: Center(
           child: Text(
             titel,
-            style: TextsStyle.bold16.copyWith(color: titelcolor),
+            style: TextsStyle.bold13.copyWith(color: titelcolor),
           ),
         ),
       ),
-      style: style ?? CustomButtonsStyle.primeryButtonstyle,
+      style: style ?? CustomButtonsStyle.itembuttonstyle,
     );
   }
 }

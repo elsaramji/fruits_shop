@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
 
 import '../../../../../core/custom/widgets/custom_button.dart';
+import '../../../../../core/styles/color_style.dart';
 
 class SignupButton extends StatelessWidget {
   final void Function() onPressed;
@@ -15,6 +16,7 @@ class SignupButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButton(
+       titelcolor: AppColors.white,
       titel: "انشاء حساب",
       onPressed: onPressed,
       style: CustomButtonsStyle.primeryButtonstyle,

@@ -74,6 +74,7 @@ class ForgetPasswordViwe extends StatelessWidget {
                     ),
                     CustomButton(
                         titel: "نسيت كلمة المرور",
+                        titelcolor: AppColors.white,
                         onPressed: () async {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();

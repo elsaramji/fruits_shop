@@ -4,6 +4,8 @@ import 'package:fruits_shop/core/custom/Style/custom_buttons_style.dart';
 import 'package:fruits_shop/core/custom/widgets/custom_button.dart';
 import 'package:fruits_shop/core/custom/widgets/custom_social_button.dart';
 
+import '../../../../core/styles/color_style.dart';
+
 class ExitDialog extends StatelessWidget {
   const ExitDialog({super.key});
 
@@ -13,6 +15,7 @@ class ExitDialog extends StatelessWidget {
       content: Text('هل تريد الخروج من التطبيق؟'),
       actions: <Widget>[
         CustomButton(
+           titelcolor: AppColors.white,
           titel: "نعم",
           onPressed: () {},
           style: CustomButtonsStyle.primeryButtonstyle,
