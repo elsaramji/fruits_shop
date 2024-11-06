@@ -24,7 +24,7 @@ class CustomButtonsStyle {
         borderRadius: BorderRadius.circular(10),
       ));
   static final ButtonStyle itembuttonstyle = ElevatedButton.styleFrom(
-      textStyle: TextsStyle.bold16.copyWith(color: AppColors.primaryColor),
+      textStyle: TextsStyle.bold13.copyWith(color: AppColors.primaryColor),
       backgroundColor: AppColors.white,
       overlayColor: AppColors.grayscale300,
       foregroundColor: AppColors.grayscale300,

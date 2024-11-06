@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../../styles/color_style.dart';
 import '../../styles/font_style.dart';
 import '../Style/custom_buttons_style.dart';
 

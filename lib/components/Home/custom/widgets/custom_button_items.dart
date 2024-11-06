@@ -20,15 +20,12 @@ class CustomButtonItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return TextButton(
       onPressed: onPressed,
-      child: SizedBox(
-        height: 32,
-        child: Center(
-          child: Text(
-            titel,
-            style: TextsStyle.bold13.copyWith(color: titelcolor),
-          ),
+      child: Center(
+        child: Text(
+          titel,
+          style: TextsStyle.bold13.copyWith(color: titelcolor),
         ),
       ),
       style: style ?? CustomButtonsStyle.itembuttonstyle,

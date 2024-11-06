@@ -15,13 +15,13 @@ class OffersOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 158,
-      width: MediaQuery.sizeOf(context).width * 0.25,
+      width: MediaQuery.sizeOf(context).width * 0.30,
       child: Positioned(
           right: 0,
           bottom: 0,
+          left: 0,
           child: Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 16, left: 16, bottom: 16),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,18 +55,14 @@ class OffersOpinionsBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       right: 0,
+      top: 0,
       bottom: 0,
       child: ClipRRect(
         borderRadius: BorderRadius.only(
-            topRight: Radius.circular(8),
-            bottomRight: Radius.circular(8)),
-        child: SizedBox(
-          width: MediaQuery.sizeOf(context).width * 0.35,
-          height: 158,
-          child: SvgPicture.asset(
-            Assets.assetsImagesOfferFuture,
-            fit: BoxFit.fill,
-          ),
+            topRight: Radius.circular(4), bottomRight: Radius.circular(4)),
+        child: SvgPicture.asset(
+          Assets.assetsImagesOfferFuture,
+          fit: BoxFit.fill,
         ),
       ),
     );

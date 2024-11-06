@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits_shop/components/Home/views/home_view.dart';
-import 'package:fruits_shop/components/futures/splash/view/splash.dart';
 import 'package:fruits_shop/core/helper/on_Generate.dart';
 import 'package:fruits_shop/core/injection/Git_it.dart';
 import 'package:fruits_shop/core/styles/color_style.dart';

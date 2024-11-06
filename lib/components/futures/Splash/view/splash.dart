@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_shop/components/futures/splash/logics/splash_logic.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
-import 'package:fruits_shop/service/database/presence.dart';
 
-import '../../../../core/constant/keys.dart';
-import '../../Auth/signin/views/Signin.dart';
-import '../../onboarding/view/view_main.dart';
 
 class Splash extends StatefulWidget {
   static const String route = '/splash';
