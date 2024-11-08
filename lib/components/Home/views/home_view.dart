@@ -4,8 +4,8 @@ import 'package:fruits_shop/core/assets/assets_image.dart';
 import '../../../core/models/product.dart';
 import '../custom/widgets/custom_bast_seller.dart';
 import '../custom/widgets/custom_home_appbar.dart';
-import '../custom/widgets/custom_prodcut_searchbar.dart';
-import '../widgets/offers_scroll.dart';
+import '../../../core/custom/widgets/custom_prodcut_searchbar.dart';
+import '../widgets/offers/offers_scroll.dart';
 
 class HomeView extends StatelessWidget {
   static const String id = 'HomeView';
@@ -53,10 +53,46 @@ class HomeView extends StatelessWidget {
     ];
     return Scaffold(
       body: SafeArea(
-          child: SizedBox(
-        height: MediaQuery.sizeOf(context).height,
-        width: MediaQuery.sizeOf(context).width,
-        child: Column(children: [
+        child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
+            child: CustomScrollView(slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 16)),
+              CustomHomeAppBar(),
+              SliverToBoxAdapter(child: SizedBox(height: 12)),
+              CustomProductSearchBar(
+                onChanged: (value) {},
+              ),
+              SliverToBoxAdapter(child: SizedBox(height: 12)),
+              // body Section
+              // offers
+              SliverToBoxAdapter(
+                  child: AspectRatio(
+                aspectRatio: 342 / 158,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => OffersItem(),
+                  itemCount: 5,
+                ),
+              )),
+              //bast seller
+              BastSellerBar(),
+              // Products
+              BestSellerManu(products: products),
+              // Bottom Section
+            ])),
+      ),
+    );
+  }
+}
+        
+        
+        
+        
+        
+        /*
+        Column(children: [
           // bar Section
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -73,6 +109,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           // body Section
+          
           // offers
           OffersScroll(),
           //bast seller
@@ -83,5 +120,5 @@ class HomeView extends StatelessWidget {
         ]),
       )),
     );
-  }
-}
+  }}
+*/

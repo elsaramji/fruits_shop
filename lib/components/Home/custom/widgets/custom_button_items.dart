@@ -1,6 +1,5 @@
 // components/Home/custom/widgets/custom_button_items.dart
 import 'package:flutter/material.dart';
-
 import '../../../../core/custom/Style/custom_buttons_style.dart';
 import '../../../../core/styles/font_style.dart';
 
@@ -20,12 +19,12 @@ class CustomButtonItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: onPressed,
       child: Center(
         child: Text(
           titel,
-          style: TextsStyle.bold13.copyWith(color: titelcolor),
+          style: TextsStyle.bold16.copyWith(color: titelcolor),
         ),
       ),
       style: style ?? CustomButtonsStyle.itembuttonstyle,

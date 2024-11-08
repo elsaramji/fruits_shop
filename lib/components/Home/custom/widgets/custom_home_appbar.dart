@@ -12,25 +12,27 @@ class CustomHomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: Image.asset(Assets.assetsImagesProfile),
-        title: Text(
-          "صباح الخير !...",
-          style: TextsStyle.regular16.copyWith(color: AppColors.grayscale400),
-        ),
-        subtitle: Text(
-          "أحمد مصطفي",
-          style: TextsStyle.bold16.copyWith(color: AppColors.grayscale950),
-        ),
-        //#EEF8ED
-        trailing: CircleAvatar(
-          radius: 20,
-          backgroundColor: AppColors.green50,
-          child: SizedBox(
-              height: 20,
-              width: 20,
-              child: Image.asset(Assets.assetsImagesNotification)),
-        ));
+    return SliverToBoxAdapter(
+      child: ListTile(
+          contentPadding: EdgeInsets.zero,
+          leading: Image.asset(Assets.assetsImagesProfile),
+          title: Text(
+            "صباح الخير !...",
+            style: TextsStyle.regular16.copyWith(color: AppColors.grayscale400),
+          ),
+          subtitle: Text(
+            "أحمد مصطفي",
+            style: TextsStyle.bold16.copyWith(color: AppColors.grayscale950),
+          ),
+          //#EEF8ED
+          trailing: CircleAvatar(
+            radius: 20,
+            backgroundColor: AppColors.green50,
+            child: SizedBox(
+                height: 20,
+                width: 20,
+                child: Image.asset(Assets.assetsImagesNotification)),
+          )),
+    );
   }
 }

@@ -16,65 +16,61 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 241 / 163,
-      child: Container(
-          padding: EdgeInsets.all(4),
-          color: AppColors.grayscale300,
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                GestureDetector(
-                  child: Icon(Icons.favorite_border_outlined),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: AspectRatio(
-                    aspectRatio: 131 / 99,
-                    child: Image.asset(
-                      product.image,
-                      fit: BoxFit.contain,
-                    ),
+    return Container(
+        padding: EdgeInsets.all(8),
+        color: AppColors.grayscale300,
+        child: Stack(children: <Widget>[
+          Positioned(
+            top: 0,
+            right: 0,
+            child: GestureDetector(
+              child: Icon(Icons.favorite_border_outlined),
+            ),
+          ),
+          Positioned.fill(
+            child: Column(
+              children: [
+                AspectRatio(
+                  aspectRatio: 131 / 99,
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.contain,
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.name,
-                      style: TextsStyle.semibold19
-                          .copyWith(color: AppColors.grayscale950),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    product.name,
+                    style: TextsStyle.semibold19
+                        .copyWith(color: AppColors.grayscale950),
+                  ),
+                  subtitle: Text.rich(
+                    TextSpan(children: [
+                      TextSpan(
+                        text: "${product.price} جنية",
+                        style: TextsStyle.bold16
+                            .copyWith(color: AppColors.orange500),
+                      ),
+                      TextSpan(
+                        text: "/${product.unit}",
+                        style: TextsStyle.semibold16
+                            .copyWith(color: AppColors.orange300),
+                      ),
+                    ]),
+                  ),
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.add,
+                      color: AppColors.white,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Text.rich(TextSpan(children: [
-                          TextSpan(
-                            text: "${product.price} جنية",
-                            style: TextsStyle.bold16
-                                .copyWith(color: AppColors.orange500),
-                          ),
-                          TextSpan(
-                            text: "/${product.unit}",
-                            style: TextsStyle.semibold16
-                                .copyWith(color: AppColors.orange300),
-                          ),
-                        ])),
-                        Spacer(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.add,
-                            color: AppColors.white,
-                          ),
-                          style: CustomButtonsStyle.primeryButtonstyle.copyWith(
-                              shape: WidgetStatePropertyAll(CircleBorder())),
-                        )
-                      ],
-                    ),
-                  ],
+                    style: CustomButtonsStyle.primeryButtonstyle.copyWith(
+                        shape: WidgetStatePropertyAll(CircleBorder())),
+                  ),
                 ),
-              ])),
-    );
+              ],
+            ),
+          ),
+        ]));
   }
 }
