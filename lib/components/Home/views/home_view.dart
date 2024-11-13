@@ -1,10 +1,11 @@
 // components/Home/views/home_view.dart
 import 'package:flutter/material.dart';
 import 'package:fruits_shop/core/assets/assets_image.dart';
+import '../../../core/custom/widgets/custom_prodcut_searchbar.dart';
 import '../../../core/models/product.dart';
+import '../../navigation/view/bottom_navigation_bar.dart';
 import '../custom/widgets/custom_bast_seller.dart';
 import '../custom/widgets/custom_home_appbar.dart';
-import '../../../core/custom/widgets/custom_prodcut_searchbar.dart';
 import '../widgets/offers/offers_scroll.dart';
 
 class HomeView extends StatelessWidget {
@@ -52,6 +53,7 @@ class HomeView extends StatelessWidget {
       ),
     ];
     return Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: SafeArea(
         child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),

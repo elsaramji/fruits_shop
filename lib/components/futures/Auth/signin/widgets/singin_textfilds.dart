@@ -5,7 +5,7 @@ import 'package:fruits_shop/components/futures/Auth/signin/widgets/forgetpasswor
 import 'package:fruits_shop/components/futures/Auth/signin/widgets/login_Button.dart';
 import 'package:fruits_shop/service/state_management/sginin_cubit/siginin_cubit_cubit.dart';
 
-import '../../../../../core/custom/variables/items.dart';
+import '../../../../../core/constant/items.dart';
 import '../../../../../core/custom/widgets/custom_text_filed.dart';
 
 class SigninForm extends StatefulWidget {

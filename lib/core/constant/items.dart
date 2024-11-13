@@ -1,8 +1,8 @@
-// core/custom/variables/items.dart
+// core/constant/items.dart
 
 import 'package:flutter/material.dart';
 
-import '../../styles/color_style.dart';
+import '../styles/color_style.dart';
 
 class Items {
   static List<Icon> visiibleIcons = [

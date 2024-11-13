@@ -18,7 +18,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(8),
-        color: AppColors.grayscale300,
+        color: AppColors.grayscale200.withOpacity(0.3),
         child: Stack(children: <Widget>[
           Positioned(
             top: 0,
